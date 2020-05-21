@@ -6,6 +6,7 @@ using MetroRadiance.Interop;
 using SylphyHorn.Serialization;
 using SylphyHorn.UI.Bindings;
 using MetroTrilithon.Threading.Tasks;
+using SylphyHorn.Interop;
 
 namespace SylphyHorn.UI
 {
@@ -20,7 +21,13 @@ namespace SylphyHorn.UI
 
 			this.PreviewKeyDown += new KeyEventHandler(PreviewKeyDownHandler);
 			this.Closed += new EventHandler(ClosedHandler);
-			this.Activated += new EventHandler(ActivatedHandler);
+			this.ContentRendered += (sender, e) =>
+			{
+				IntPtr hWnd = new WindowInteropHelper(this).EnsureHandle();
+				NativeMethods.StealFocus(hWnd);
+				this.NameBox.Focus();
+				this.NameBox.SelectAll();
+			};
 		}
 
 		protected override void OnSourceInitialized(EventArgs e)
@@ -72,13 +79,6 @@ namespace SylphyHorn.UI
 					this.Top = (area.Top + (area.Height - height) / 2) / dpi.ScaleY;
 					break;
 			}
-			this.Activate();
-		}
-
-		private void ActivatedHandler(object sender, EventArgs e)
-		{
-			NameBox.Focus();
-			NameBox.SelectAll();
 		}
 
 		private void PreviewKeyDownHandler(object sender, KeyEventArgs e)
