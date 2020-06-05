@@ -363,4 +363,7 @@
   <data name="Settings_SwitchDesktopPrevious" xml:space="preserve">
     <value>Previous:</value>
   </data>
+  <data name="Settings_Startup_Admin" xml:space="preserve">
+    <value>Start as Administrator</value>
+  </data>
 </root>

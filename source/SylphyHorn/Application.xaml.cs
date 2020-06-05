@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Security.Principal;
 using System.Windows;
 using System.Windows.Threading;
 using Livet;
@@ -30,6 +32,13 @@ namespace SylphyHorn
 
 		internal TaskTrayIcon TaskTrayIcon { get; private set; }
 
+		private static bool IsAdministrator()
+		{
+			var identity = WindowsIdentity.GetCurrent();
+			var principal = new WindowsPrincipal(identity);
+			return principal.IsInRole(WindowsBuiltInRole.Administrator);
+		}
+
 		protected override void OnStartup(StartupEventArgs e)
 		{
 			Args = new CommandLineArgs(e.Args);
@@ -37,6 +46,19 @@ namespace SylphyHorn
 			if (Args.Setup)
 			{
 				this.SetupShortcut();
+			}
+
+			if (Settings.General.StartAsAdmin && !IsAdministrator())
+			{
+				var exeName = Process.GetCurrentProcess().MainModule.FileName;
+				var startInfo = new ProcessStartInfo(exeName)
+				{
+					Verb = "runas", 
+					Arguments = string.Join(" ", e.Args)
+				};
+				Process.Start(startInfo);
+				Current.Shutdown();
+				return;
 			}
 
 #if !DEBUG

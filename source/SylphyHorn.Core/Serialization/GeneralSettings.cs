@@ -24,6 +24,8 @@ namespace SylphyHorn.Serialization
 
 		public SerializableProperty<int> NotificationDuration => this.Cache(key => new SerializableProperty<int>(key, this._provider, 1500));
 
+		public SerializableProperty<bool> StartAsAdmin => this.Cache(key => new SerializableProperty<bool>(key, this._provider, false));
+		
 		public SerializableProperty<bool> ChangeBackgroundEachDesktop => this.Cache(key => new SerializableProperty<bool>(key, this._provider));
 
 		public SerializableProperty<string> DesktopBackgroundFolderPath => this.Cache(key => new SerializableProperty<string>(key, this._provider));

@@ -637,6 +637,15 @@ namespace SylphyHorn.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Start as Administrator.
+        /// </summary>
+        public static string Settings_Startup_Admin {
+            get {
+                return ResourceManager.GetString("Settings_Startup_Admin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Automaticaly start at logon.
         /// </summary>
         public static string Settings_Startup_Automaticaly {
