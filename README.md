@@ -40,6 +40,11 @@ Please download from [Releases](https://github.com/ViRb3/SylphyHornEx/releases).
 
 * Change the background for each desktop  
 
+## Troubleshooting
+
+* __Problem:__ Cannot interact with certain windows  
+  __Solution:__ Enable the "Start as Administrator" setting. Check [#6](https://github.com/ViRb3/SylphyHornEx/issues/6) for more information
+
 ## Credits
 * Manato KAMEYA [@Grabacr07](https://twitter.com/Grabacr07) (Author, Developer)
 * Yutaka TSUMORI [@tmyt](https://twitter.com/tmyt) (Developer)
