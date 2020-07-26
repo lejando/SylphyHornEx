@@ -1,0 +1,22 @@
+---
+branches:
+  - develop
+  - 
+    name: testing
+    prerelease: test
+
+plugins:
+  - "@semantic-release/commit-analyzer"
+
+  - #
+    - "@semantic-release/exec"
+    - prepareCmd: "powershell -ep bypass -file build.ps1"
+
+  - "@semantic-release/release-notes-generator"
+
+  - #
+    - "@semantic-release/github"
+    - successComment: false
+      failComment: false
+      assets:
+        - path: SylphyHornEx.zip
