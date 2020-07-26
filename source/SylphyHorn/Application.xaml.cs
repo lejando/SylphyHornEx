@@ -53,7 +53,7 @@ namespace SylphyHorn
 				var exeName = Process.GetCurrentProcess().MainModule.FileName;
 				var startInfo = new ProcessStartInfo(exeName)
 				{
-					Verb = "runas", 
+					Verb = "runas",
 					Arguments = string.Join(" ", e.Args)
 				};
 				Process.Start(startInfo);
@@ -114,6 +114,7 @@ namespace SylphyHorn
 					NotificationService.Instance.AddTo(this);
 					RenameService.Instance.AddTo(this);
 					WallpaperService.Instance.AddTo(this);
+					AlwaysOnTopService.Instance.AddTo(this);
 
 #if !DEBUG
 					appInstance.CommandLineArgsReceived += (sender, message) =>

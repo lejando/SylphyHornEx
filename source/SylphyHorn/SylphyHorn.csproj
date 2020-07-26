@@ -242,6 +242,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Services\AlwaysOnTopService.cs" />
     <Compile Include="Services\RenameService.cs" />
     <Compile Include="Services\VirtualDesktopMoveService.cs" />
     <Compile Include="UI\Bindings\BindableTextViewModel.cs" />

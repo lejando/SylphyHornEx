@@ -366,4 +366,10 @@
   <data name="Settings_Startup_Admin" xml:space="preserve">
     <value>Start as Administrator</value>
   </data>
+  <data name="Settings_AlwaysOnTop" xml:space="preserve">
+    <value>Always on top item</value>
+  </data>
+  <data name="Settings_AlwaysOnTop_Enable" xml:space="preserve">
+    <value>Show always on top item in system menu</value>
+  </data>
 </root>

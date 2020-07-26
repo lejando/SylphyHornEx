@@ -88,6 +88,24 @@ namespace SylphyHorn.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Always on top item.
+        /// </summary>
+        public static string Settings_AlwaysOnTop {
+            get {
+                return ResourceManager.GetString("Settings_AlwaysOnTop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show always on top item in system menu.
+        /// </summary>
+        public static string Settings_AlwaysOnTop_Enable {
+            get {
+                return ResourceManager.GetString("Settings_AlwaysOnTop_Enable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Background.
         /// </summary>
         public static string Settings_Background {

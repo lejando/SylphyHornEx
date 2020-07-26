@@ -44,5 +44,7 @@ namespace SylphyHorn.Serialization
 
 		public SerializableProperty<ObservableCollection<StringHolder>> DesktopNames => this.Cache(key => new SerializableProperty<ObservableCollection<StringHolder>>(key, this._provider));
 
+		public SerializableProperty<bool> ShowAlwaysOnTopItem => this.Cache(key => new SerializableProperty<bool>(key, this._provider, false));
+
 	}
 }
